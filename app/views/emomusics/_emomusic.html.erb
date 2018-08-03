@@ -1,6 +1,9 @@
 <li id="emomusic-<%= emomusic.id %>">
+  <%= link_to gravatar_for(emomusic.user, size: 50), emomusic.user %>
+  <span class="user"><%= link_to emomusic.user.name, emomusic.user %></span>
   <span class="composer"><%= emomusic.composer %></span>
   <span class="title"><%= emomusic.title %></span>
+  <span class="emotion">がエモい!</span>
   <span class="timestamp">
     Added <%= time_ago_in_words(emomusic.created_at) %> ago.
     <% if current_user?(emomusic.user) %>
