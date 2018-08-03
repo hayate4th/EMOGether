@@ -4,6 +4,7 @@
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
+$emo-red: #ff4d4d;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -62,9 +63,29 @@ p {
 
 /* header */
 
-.header-red {
-  background-color: #ff4d4d;
-  border-color: #ff4d4d;
+#navbar-red {
+  background-color: $emo-red;
+  border-color: $emo-red;
+  li {
+    a {
+      color: white;
+      &:hover {
+        color: $gray-darker;
+      }
+    }
+  }
+  .open {
+    a {
+      background-color: $emo-red;
+    }
+  }
+  .dropdown-menu {
+    background-color: $emo-red;
+    border-color: $emo-red;
+    .divider {
+      background-color: #ee3c3c;
+    }
+  }
 }
 
 #logo {
