@@ -1,0 +1,2 @@
+module EmomusicsHelper
+end

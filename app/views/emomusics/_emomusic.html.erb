@@ -1,0 +1,11 @@
+<li id="emomusic-<%= emomusic.id %>">
+  <span class="composer"><%= emomusic.composer %></span>
+  <span class="title"><%= emomusic.title %></span>
+  <span class="timestamp">
+    Added <%= time_ago_in_words(emomusic.created_at) %> ago.
+    <% if current_user?(emomusic.user) %>
+      <%= link_to "delete", emomusic, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+</li>

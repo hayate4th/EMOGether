@@ -13,10 +13,11 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     assert_select 'title', full_title(@user.name)
     assert_select 'h1', text: @user.name
     assert_select 'h1>img.gravatar'
-    assert_match @user.microposts.count.to_s, response.body
-    assert_select 'div.pagination', count:1
-    @user.microposts.paginate(page: 1).each do |micropost|
-      assert_match micropost.content, response.body
+    assert_match @user.emomusics.count.to_s, response.body
+    assert_select 'div.pagination'
+    @user.emomusics.paginate(page: 1).each do |emomusic|
+      assert_match emomusic.title, response.body
+      assert_match emomusic.composer, response.body
     end
   end
 end
