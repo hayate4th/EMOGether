@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @emomusics = @user.emomusics.paginate(page: params[:page])
+    @likes = Like.where(emomusic_id: params[:emomusic_id])
     redirect_to root_url and return unless @user.activated?
   end
 
